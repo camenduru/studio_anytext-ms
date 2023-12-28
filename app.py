@@ -12,6 +12,7 @@ import numpy as np
 import re
 from gradio.components import Component
 from util import check_channels, resize_image
+from typing import List
 
 BBOX_MAX_NUM = 8
 # img_save_folder = 'SaveImages'
