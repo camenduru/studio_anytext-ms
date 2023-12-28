@@ -67,6 +67,7 @@ class JavaScriptLoader(ScriptLoader):
         for file_path, file_name in js_scripts:
             with open(file_path, 'r', encoding="utf-8") as file:
                 self.loaded_scripts.append(f"\n<!--{file_name}-->\n<script>\n{file.read()}\n</script>")
+        print(f'loaded_scripts: {self.loaded_scripts}')
 
     def template_response(self, *args, **kwargs):
         response = self.original_template(*args, **kwargs)
