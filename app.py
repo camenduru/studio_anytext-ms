@@ -319,8 +319,8 @@ with block:
                         revise_pos = gr.Checkbox(label='Revise Position(修正位置)', value=False)
                         # gr.Markdown('<span style="color:silver;font-size:12px">try to revise according to text\'s bounding rectangle(尝试通过渲染后的文字行的外接矩形框修正位置)</span>')
                     with gr.Row(variant='compact'):
-                        rect_cb_list: list[Component] = []
-                        rect_xywh_list: list[Component] = []
+                        rect_cb_list: List[Component] = []
+                        rect_xywh_list: List[Component] = []
                         for i in range(BBOX_MAX_NUM):
                             e = gr.Checkbox(label=f'{i}', value=False, visible=False, min_width='10')
                             x = gr.Slider(label='x', value=0.4, minimum=0.0, maximum=1.0, step=0.0001, elem_id=f'MD-t2i-{i}-x', visible=False)
