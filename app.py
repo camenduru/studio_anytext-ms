@@ -12,7 +12,7 @@ import numpy as np
 import re
 from gradio.components import Component
 from util import check_channels, resize_image
-from typing import List
+from typing import List, Tuple
 
 BBOX_MAX_NUM = 8
 # img_save_folder = 'SaveImages'
@@ -41,9 +41,10 @@ class ScriptLoader:
         self.script_type = script_type
         self.path = ScriptLoader.path_map[script_type]
         self.loaded_scripts = []
+        print(f'JavaScript Path: {self.path}')
 
     @staticmethod
-    def get_scripts(path: str, file_type: str):
+    def get_scripts(path: str, file_type: str) -> List[Tuple[str, str]]:
         scripts = []
         dir_list = [os.path.join(path, f) for f in os.listdir(path)]
         files_list = [f for f in dir_list if os.path.isfile(f)]
