@@ -42,7 +42,7 @@ class ScriptLoader:
         self.loaded_scripts = []
 
     @staticmethod
-    def get_scripts(path: str, file_type: str) -> list[tuple[str, str]]:
+    def get_scripts(path: str, file_type: str):
         scripts = []
         dir_list = [os.path.join(path, f) for f in os.listdir(path)]
         files_list = [f for f in dir_list if os.path.isfile(f)]
