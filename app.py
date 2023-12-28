@@ -251,7 +251,7 @@ js_loader = JavaScriptLoader()
 block = gr.Blocks(css='style.css', theme=gr.themes.Soft()).queue()
 with block:
     gr.HTML('<div style="text-align: center; margin: 20px auto;"> \
-            <img id="banner" src="file/example_images/banner.png" alt="anytext"> <br>  \
+            <img id="banner" src="https://modelscope.cn/api/v1/studio/damo/studio_anytext/repo?Revision=master&FilePath=example_images/banner.png&View=true" alt="anytext"> <br>  \
             [<a href="https://arxiv.org/abs/2311.03054" style="color:blue; font-size:18px;">arXiv</a>] \
             [<a href="https://github.com/tyxsspa/AnyText" style="color:blue; font-size:18px;">Code</a>]\
             version: 1.1.0 </div>')
