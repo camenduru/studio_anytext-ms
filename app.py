@@ -168,8 +168,8 @@ def process(mode, prompt, pos_radio, sort_radio, revise_pos, show_debug, draw_im
     }
     results, rtn_code, rtn_warning, debug_info = inference(input_data, mode=mode, **params)
     if rtn_code >= 0:
-        save_images(results, img_save_folder)
-        print(f'Done, result images are saved in: {img_save_folder}')
+        # save_images(results, img_save_folder)
+        # print(f'Done, result images are saved in: {img_save_folder}')
         if rtn_warning:
             gr.Warning(rtn_warning)
     else:
