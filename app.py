@@ -12,7 +12,6 @@ import numpy as np
 import re
 from gradio.components import Component
 from util import check_channels, resize_image
-from typing import List, Tuple
 
 BBOX_MAX_NUM = 8
 # img_save_folder = 'SaveImages'
@@ -44,7 +43,7 @@ class ScriptLoader:
         self.loaded_scripts = []
 
     @staticmethod
-    def get_scripts(path: str, file_type: str) -> List[Tuple[str, str]]:
+    def get_scripts(path: str, file_type: str) -> list[tuple[str, str]]:
         scripts = []
         dir_list = [os.path.join(path, f) for f in os.listdir(path)]
         files_list = [f for f in dir_list if os.path.isfile(f)]
@@ -321,8 +320,8 @@ with block:
                         revise_pos = gr.Checkbox(label='Revise Position(修正位置)', value=False)
                         # gr.Markdown('<span style="color:silver;font-size:12px">try to revise according to text\'s bounding rectangle(尝试通过渲染后的文字行的外接矩形框修正位置)</span>')
                     with gr.Row(variant='compact'):
-                        rect_cb_list: List[Component] = []
-                        rect_xywh_list: List[Component] = []
+                        rect_cb_list: list[Component] = []
+                        rect_xywh_list: list[Component] = []
                         for i in range(BBOX_MAX_NUM):
                             e = gr.Checkbox(label=f'{i}', value=False, visible=False, min_width='10')
                             x = gr.Slider(label='x', value=0.4, minimum=0.0, maximum=1.0, step=0.0001, elem_id=f'MD-t2i-{i}-x', visible=False)
