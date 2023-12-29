@@ -19,6 +19,7 @@ BBOX_MAX_NUM = 8
 load_model = True
 if load_model:
     inference = pipeline('my-anytext-task', model='damo/cv_anytext_text_generation_editing', model_revision='v1.1.0')
+    os.system('python -V')
 
 
 def count_lines(prompt):
@@ -41,7 +42,6 @@ class ScriptLoader:
         self.script_type = script_type
         self.path = ScriptLoader.path_map[script_type]
         self.loaded_scripts = []
-        print(f'JavaScript Path: {self.path}')
 
     @staticmethod
     def get_scripts(path: str, file_type: str) -> List[Tuple[str, str]]:
@@ -67,7 +67,6 @@ class JavaScriptLoader(ScriptLoader):
         for file_path, file_name in js_scripts:
             with open(file_path, 'r', encoding="utf-8") as file:
                 self.loaded_scripts.append(f"\n<!--{file_name}-->\n<script>\n{file.read()}\n</script>")
-        print(f'loaded_scripts: {self.loaded_scripts}')
 
     def template_response(self, *args, **kwargs):
         response = self.original_template(*args, **kwargs)
