@@ -395,7 +395,7 @@ with block:
 
 block.launch(
     server_name='0.0.0.0' if os.getenv('GRADIO_LISTEN', '') != '' else "127.0.0.1",
-    share=False,
+    share=True,
     root_path=f"/{os.getenv('GRADIO_PROXY_PATH')}" if os.getenv('GRADIO_PROXY_PATH') else ""
 )
 # block.launch(server_name='0.0.0.0')
